@@ -1,0 +1,58 @@
+.encabezado{
+    background-color: rgb(169, 68, 46);
+    height: 25vh;
+}
+
+.container-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container-main-list{
+    margin-left: 10px;
+}
+
+.container-main-list img{
+    height: 40px;
+    width: 50px;
+    margin: 20px 0 5px 0;
+}
+
+.contenedor-img{
+    text-align: center;
+}
+
+.contenedor-img img{
+    width: 60%;
+    height: 60%;
+}
+
+.encabezado ul li{
+    list-style: none;
+    font-size: 22px;
+    margin-left: 10px;
+    padding-top: 5px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+@media (min-width: 700px) {
+
+    .encabezado{
+        height: 20vh;
+    }
+
+    .encabezado ul li{
+        font-size: 35px;
+        margin: 15px;
+    }
+
+    #main-icon{
+        display: none;
+    }
+
+    .container-main-list ul{
+        display: flex;
+        flex-direction: row;
+    }
+}    
