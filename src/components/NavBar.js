@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/NavBar.css";
+import CartWidget from "./CartWidget";
 
 function NavBar(){
     return(
@@ -15,6 +16,9 @@ function NavBar(){
             </div> 
             <div className="contenedor-img">
                 <img src={require("../img/Logo.png")} alt="logo"/>
+            </div>
+            <div className="container-cart">
+                <CartWidget/>
             </div>   
         </div>    
     </header>
