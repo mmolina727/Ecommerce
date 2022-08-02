@@ -1,0 +1,27 @@
+.container-count{
+    background-color: rgb(216, 210, 195);
+    border-radius: 10px;
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+.container-count button{
+    background-color: rgb(216, 210, 195);
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    color: black;
+}
+
+.container-count span{
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+}
