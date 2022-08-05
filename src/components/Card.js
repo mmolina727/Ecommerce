@@ -11,7 +11,7 @@ const Card = ({image, alt, product, price}) => {
         <div className='card-text'>
             <h3>{product}</h3>
             <p>{price}</p>
-            <ItemCount initial="1" stock="5"/>
+            <ItemCount initial="1 " stock="5"/>
             <button>Agregar carrito</button>
         </div>
     </div>
