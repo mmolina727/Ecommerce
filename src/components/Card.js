@@ -6,7 +6,7 @@ const Card = ({image, alt, product, price}) => {
   return (
     <div className='card'>
         <div className='card-image'>
-            <img src={require(`../img/${image}`)} alt= {alt}/>
+            <img src={`${image}`} alt= {alt}/>
         </div>
         <div className='card-text'>
             <h3>{product}</h3>
