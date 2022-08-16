@@ -1,18 +1,19 @@
 import React from 'react'
 import "../css/Card.css";
-import ItemCount from './ItemCount';
+import { Link } from "react-router-dom";
 
-const Card = ({image, alt, product, price}) => {
+const Card = ({img, id, price, product, alt}) => {
   return (
     <div className='card'>
         <div className='card-image'>
-            <img src={`${image}`} alt= {alt}/>
+            <img src={img} alt= {alt}/>
         </div>
         <div className='card-text'>
             <h3>{product}</h3>
             <p>{price}</p>
-            <ItemCount initial="1 " stock="5"/>
-            <button>Agregar carrito</button>
+            <Link to={`detalle/${id}`}>
+              <button>Ver mas</button>
+            </Link>
         </div>
     </div>
   )

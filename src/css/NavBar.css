@@ -45,7 +45,7 @@
     font-size: 22px;
     margin-left: 10px;
     padding-top: 5px;
-    font-family: 'Bebas Neue', cursive;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 @media (min-width: 700px) {
@@ -66,5 +66,10 @@
     .container-main-list ul{
         display: flex;
         flex-direction: row;
+    }
+
+    .container-main-list ul li a{
+        text-decoration: none;
+        color: black;
     }
 }    

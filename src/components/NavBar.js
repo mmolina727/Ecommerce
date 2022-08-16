@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/NavBar.css";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBar(){
     return(
@@ -9,9 +10,9 @@ function NavBar(){
             <div className="container-main-list">
                 <img  id ="main-icon" src={require("../img/menu-hamburguesa.png")} alt="icon-main"/>
                 <ul >
-                    <li>HOME</li>
-                    <li>PRODUCTOS</li>
-                    <li>CONTACTO</li>
+                    <li><Link to={"/"}>HOME</Link></li>
+                    <li><Link to ={`category/quesos`}>QUESOS</Link></li>
+                    <li><Link to ={`category/embutidos`}>EMBUTIDOS</Link></li>
                 </ul>
             </div> 
             <div className="contenedor-img">
