@@ -1,8 +1,19 @@
 import React from 'react'
 import "../css/CardDetail.css";
 import ItemCount from './ItemCount';
+import { useState } from 'react';
 
 const CardDetail = ({img, alt, product, price, }) => {
+
+  const [count,SetCount] = useState (0);
+
+  const onCount=(count)=>{
+
+    console.log(`se agregaron ${count} unidades de ${product}`);
+    SetCount(count);
+    console.log(count);
+  }
+
     return (
       <div className='card-detail'>
           <div className='card-detail-image'>
@@ -12,8 +23,10 @@ const CardDetail = ({img, alt, product, price, }) => {
           <div className='card-detail-text'>
               <h3>{product}</h3>
               <p>{price}</p>
-              <ItemCount initial="1 " stock="10"/>
-              <button>Agregar carrito</button>
+              {(count==0) ?
+              <ItemCount initial="1 " stock="10" onAdd={onCount}/>
+              :<button>Agregar carrito</button>
+              }     
           </div>
       </div>
     )

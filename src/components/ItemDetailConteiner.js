@@ -21,7 +21,6 @@ const ItemDetailConteiner = () => {
       useEffect(()=>{
         getData()
         .then((respuesta)=> setData(respuesta)
-        .catch((error)=> setData(error))
         );
       }, []);
 
