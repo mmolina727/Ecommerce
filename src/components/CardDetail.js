@@ -2,16 +2,25 @@ import React from 'react'
 import "../css/CardDetail.css";
 import ItemCount from './ItemCount';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { cartcontext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
-const CardDetail = ({img, alt, product, price, }) => {
+const CardDetail = ({id,img, alt, product, price, }) => {
+
+  const {addToCart, cleanCart, removeItem}=useContext(cartcontext);
 
   const [count,SetCount] = useState (0);
 
   const onCount=(count)=>{
+    const cartItem= {id,img,alt,product,price}
 
-    console.log(`se agregaron ${count} unidades de ${product}`);
+    addToCart(cartItem,count);
+    cleanCart();
+    removeItem(cartItem);
+
+    
     SetCount(count);
-    console.log(count);
   }
 
     return (
@@ -25,7 +34,7 @@ const CardDetail = ({img, alt, product, price, }) => {
               <p>{price}</p>
               {(count==0) ?
               <ItemCount initial="1 " stock="10" onAdd={onCount}/>
-              :<button>Agregar carrito</button>
+              :<Link to={"/cart"}><button>Agregar carrito</button></Link>
               }     
           </div>
       </div>
