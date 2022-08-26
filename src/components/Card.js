@@ -10,7 +10,7 @@ const Card = ({img, id, price, product, alt}) => {
         </div>
         <div className='card-text'>
             <h3>{product}</h3>
-            <p>{price}</p>
+            <p>${price} x Ud.</p>
             <Link to={`detalle/${id}`}>
               <button>Ver mas</button>
             </Link>

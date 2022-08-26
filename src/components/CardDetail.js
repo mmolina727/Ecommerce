@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const CardDetail = ({id,img, alt, product, price, }) => {
 
-  const {addToCart, cleanCart, removeItem}=useContext(cartcontext);
+  const {addToCart, cleanCart, removeItem, countCart}=useContext(cartcontext);
 
   const [count,SetCount] = useState (0);
 
@@ -16,8 +16,8 @@ const CardDetail = ({id,img, alt, product, price, }) => {
     const cartItem= {id,img,alt,product,price}
 
     addToCart(cartItem,count);
-    cleanCart();
-    removeItem(cartItem);
+    //cleanCart();
+    
 
     
     SetCount(count);
@@ -31,7 +31,7 @@ const CardDetail = ({id,img, alt, product, price, }) => {
           </div>
           <div className='card-detail-text'>
               <h3>{product}</h3>
-              <p>{price}</p>
+              <p>${price} x Ud.</p>
               {(count==0) ?
               <ItemCount initial="1 " stock="10" onAdd={onCount}/>
               :<Link to={"/cart"}><button>Agregar carrito</button></Link>

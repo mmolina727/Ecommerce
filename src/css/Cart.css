@@ -1,0 +1,23 @@
+.cart{
+    margin: 20px 80px;
+    border: solid;
+}
+
+.conteiner-cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.conteiner-cart li{
+    text-align: center;
+    list-style: none;
+}
+
+.msg-cart{
+    font-size: 20px;
+    text-align: center;
+    margin: 30px 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

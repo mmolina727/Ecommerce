@@ -1,0 +1,21 @@
+.content-list-cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 15vh;
+    padding: 10px;
+}
+
+.cart-list-img{
+    height: 100%;
+}
+
+.cart-list-img img{
+    height: 100%;
+    width: 100%;
+}
+
+.cart-list{
+    display: flex;
+    place-items: center;
+}

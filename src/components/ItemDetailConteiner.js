@@ -29,7 +29,7 @@ const ItemDetailConteiner = () => {
                       product= {data.product}
                       img= {data.img}
                       alt= {data.alt}
-                      price= {data.price}
+                      price={data.price}
                       id={data.id} />
   );
 }

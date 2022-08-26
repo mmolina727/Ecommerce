@@ -12,18 +12,23 @@ function CustomCartContextProvider({children}){
             let itemFind= copyCart.findIndex(el => el.id == item.id);
             copyCart[itemFind].quantity+= quantity;
             setCart(copyCart);
+            countCart();
 
         }
 
         else{
         copyCart.push({...item,quantity: quantity});
         setCart(copyCart);
+        countCart();
+        totalPrice();
         }
     }
 
     const cleanCart=()=>{
         copyCart=[];
         setCart(copyCart);
+        countCart();
+        totalPrice();
     }
 
     const removeItem=(itemId)=>{
@@ -31,6 +36,8 @@ function CustomCartContextProvider({children}){
         let index= copyCart.indexOf(remove);
         copyCart.splice(index,1) 
         setCart(copyCart);
+        countCart();
+        totalPrice();
     }
 
     const isInCart=(id)=>{
@@ -38,8 +45,25 @@ function CustomCartContextProvider({children}){
         
     }
 
+    const countCart =()=>{
+        let total = 0;
+        for(let i=0; i < copyCart.length; i++){
+             total+= copyCart[i].quantity
+        }
+        return  (total);
+    }
+
+    const totalPrice =()=>{
+        let price = 0;
+        for(let i=0; i < copyCart.length; i++){
+            price+= (copyCart[i].price * copyCart[i].quantity)
+       }
+       console.log(price);
+       return  (price);
+    }
+
     return(
-        <cartcontext.Provider value={ {cart, addToCart, cleanCart, removeItem}}>
+        <cartcontext.Provider value={ {cart, addToCart, cleanCart, removeItem, countCart, totalPrice}}>
             {children}
         </cartcontext.Provider>
     )
