@@ -2,10 +2,9 @@ import React from 'react'
 import  "../css/ItemListContainer.css";
 import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
-import itemsData from '../data/data.js';
 import { useParams } from 'react-router-dom';
 import firestoreDB from "../database/firestone";
-import {getDocs, collection, doc, query, where} from "firebase/firestore";
+import {getDocs, collection, query, where} from "firebase/firestore";
 
 export const ItemListContainer = ({greeting}) => {
   const [data, setData]= useState([]);
@@ -19,7 +18,7 @@ export const ItemListContainer = ({greeting}) => {
 
       getDocs(productColletion).then( snapshot => {
         const docsData= snapshot.docs.map( docs => {
-          return {...docs.data(), id: doc.id}
+          return {...docs.data()}
         });
         resolve(docsData);
       });
@@ -32,7 +31,7 @@ export const ItemListContainer = ({greeting}) => {
           const queryProducts = query(productsCollection, where("category", "==", idCategory))
           getDocs(queryProducts).then(snapshot => {
             const docsData = snapshot.docs.map(doc => {
-              return { ...doc.data(), id: doc.id }
+              return { ...doc.data()}
             });
             resolve(docsData);
             console.log(docsData)

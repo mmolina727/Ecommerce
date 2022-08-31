@@ -4,12 +4,12 @@ import { useContext } from 'react';
 import { ItemCart } from './ItemCart';
 import "../css/Cart.css";
 import { useEffect } from 'react';
+import { UserForm } from './UserForm';
 
 export const Cart = () => {
 
     const {cart, totalPrice}=useContext(cartcontext);
     useEffect(()=>{
-      console.log("cambie");
     },[cart]);
 
     if(cart.length ===0){
@@ -23,7 +23,8 @@ export const Cart = () => {
   return (
     
 
-    <div className='cart'>
+    <div >
+      <div className='cart'>
       <ul className='conteiner-cart'>
         <li>Producto</li>
         <li>Precio</li>
@@ -42,6 +43,8 @@ export const Cart = () => {
                             />;    
         })}
       <div> Total: ${totalPrice()}</div>
+      </div>
+      <UserForm/>
     </div>
   )}
 }

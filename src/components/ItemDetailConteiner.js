@@ -3,34 +3,57 @@ import { useEffect, useState } from "react";
 import CardDetail from './CardDetail.js';
 import { useParams} from "react-router-dom";
 import firestoreDB from "../database/firestone";
-import { getDoc, collection, doc} from "firebase/firestore";
+import { getDocs, collection, query, where} from "firebase/firestore";
 
 
-function getById(id) {
-  return new Promise( (resolve) =>{
-    const todosCollectionRef = collection(firestoreDB, "productos");
-    const docRef = doc(todosCollectionRef, id);
 
-    getDoc(docRef).then( snapshot => {
-        resolve(
-          { ...snapshot.data(), id: snapshot.id} 
-        )
-        console.log(resolve);
-    });    
-  } )
-}
 
 function ItemDetailConteiner() {
 
-    const [item, setDetail] = useState([])
-    const {id} = useParams();
-    useEffect(() => {
-      if (id) {
-        getById(id).then((resolve) => {
-          setDetail(resolve)
+  const [item, setData]= useState([]);
+
+  const id= useParams().id;
+
+  const getData=()=>{
+
+    return new Promise((resolve)=>{
+      const productColletion = collection(firestoreDB, "productos");
+
+      getDocs(productColletion).then( snapshot => {
+        const docsData= snapshot.docs.map( docs => {
+          return {...docs.data()}
         });
-      }
-    }, [id])
+        resolve(docsData);
+      });
+    })
+  };
+
+  function getItemsFromDBbyId(id) {
+        return new Promise((resolve) => {
+          const productsCollection = collection(firestoreDB, "productos");
+          const queryProducts = query(productsCollection, where("id", "==", id))
+          getDocs(queryProducts).then(snapshot => {
+            const docsData = snapshot.docs.map(doc => {
+              return { ...doc.data()}
+            });
+            resolve(docsData);
+            console.log(docsData)
+          });
+        });
+      };
+
+  useEffect(() => {
+        if (id) {
+          getItemsFromDBbyId(id).then((resolve) => {
+            setData(resolve)
+          });
+    
+        } else {
+          getData().then((resolve) =>{
+            setData(resolve) 
+          });
+        }
+      }, [id])
   
   return (
           <CardDetail 
