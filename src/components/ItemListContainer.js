@@ -18,7 +18,7 @@ export const ItemListContainer = ({greeting}) => {
 
       getDocs(productColletion).then( snapshot => {
         const docsData= snapshot.docs.map( docs => {
-          return {...docs.data()}
+          return {...docs.data(), id: docs.id}
         });
         resolve(docsData);
       });
@@ -31,7 +31,7 @@ export const ItemListContainer = ({greeting}) => {
           const queryProducts = query(productsCollection, where("category", "==", idCategory))
           getDocs(queryProducts).then(snapshot => {
             const docsData = snapshot.docs.map(doc => {
-              return { ...doc.data()}
+              return { ...doc.data(), id: doc.id}
             });
             resolve(docsData);
             console.log(docsData)

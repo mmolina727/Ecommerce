@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import CardDetail from './CardDetail.js';
 import { useParams} from "react-router-dom";
 import firestoreDB from "../database/firestone";
-import { getDocs, collection, query, where} from "firebase/firestore";
+import { getDocs,doc, collection, getDoc} from "firebase/firestore";
 
 
 
@@ -31,14 +31,12 @@ function ItemDetailConteiner() {
   function getItemsFromDBbyId(id) {
         return new Promise((resolve) => {
           const productsCollection = collection(firestoreDB, "productos");
-          const queryProducts = query(productsCollection, where("id", "==", id))
-          getDocs(queryProducts).then(snapshot => {
-            const docsData = snapshot.docs.map(doc => {
-              return { ...doc.data()}
-            });
-            resolve(docsData);
-            console.log(docsData)
-          });
+          const docRef= doc(productsCollection, id)
+          let producto={};
+          getDoc(docRef).then(doc=> {
+            producto= {...doc.data(), id: doc.id}
+            resolve(producto);
+          })
         });
       };
 
