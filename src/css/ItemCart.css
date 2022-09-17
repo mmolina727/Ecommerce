@@ -4,6 +4,8 @@
     justify-content: space-between;
     height: 15vh;
     padding: 10px;
+    border: solid;
+    border-color: whitesmoke;
 }
 
 .cart-list-img{
@@ -18,4 +20,13 @@
 .cart-list{
     display: flex;
     place-items: center;
+}
+
+.content-button button{
+    border-radius: 100%;
+    font-size: 12px;
+    padding: 10px;
+    background-color: rgb(211, 0, 0);
+    color: white;
+    font-style:unset;
 }

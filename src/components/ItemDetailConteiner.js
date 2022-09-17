@@ -4,6 +4,8 @@ import CardDetail from './CardDetail.js';
 import { useParams} from "react-router-dom";
 import firestoreDB from "../database/firestone";
 import { getDocs,doc, collection, getDoc} from "firebase/firestore";
+import { Ring } from '@uiball/loaders'
+
 
 
 
@@ -52,6 +54,16 @@ function ItemDetailConteiner() {
           });
         }
       }, [id])
+
+  if(item.length==0){
+
+  return <Ring 
+    size={70}
+    lineWeight={7}
+    speed={1} 
+    color="gray" 
+  />
+  }
   
   return (
           <CardDetail 

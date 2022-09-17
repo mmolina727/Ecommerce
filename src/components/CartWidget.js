@@ -10,7 +10,9 @@ export const CartWidget = () => {
     <div className='content-widget'>
       <Link to={"/cart"}>
       <img src= {require("../img/cart.png")} alt="cart"/>
+      <div className='content-count'>
       <span>{countCart()}</span>
+      </div>
       </Link>
     </div>
     

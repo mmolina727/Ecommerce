@@ -30,6 +30,7 @@ export const Cart = () => {
         <li>Precio</li>
         <li>Detalle</li>
         <li>Cantidad</li>
+        <li></li>
       </ul>
         {cart.map((item)=>{
                             return  <ItemCart 
@@ -42,7 +43,7 @@ export const Cart = () => {
                                     quantity={item.quantity}
                             />;    
         })}
-      <div> Total: ${totalPrice()}</div>
+      <div className='cart-price'> Total: ${totalPrice()}</div>
       </div>
       <UserForm/>
     </div>

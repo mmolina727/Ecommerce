@@ -14,7 +14,7 @@ export const ItemCart = ({img, price, product, quantity}) => {
         <div className='cart-list'>${price}x ud</div>
         <div className='cart-list'>{product}</div>
         <div className='cart-list'>{quantity}</div>
-        <div><button onClick={()=> removeItem(cart)}>x </button></div>
+        <div className='content-button'><button onClick={()=> removeItem(cart)}>x </button></div>
     </div>
   )
 }

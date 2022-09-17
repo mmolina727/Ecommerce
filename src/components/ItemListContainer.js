@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import firestoreDB from "../database/firestone";
 import {getDocs, collection, query, where} from "firebase/firestore";
+import { Ring } from '@uiball/loaders'
 
 export const ItemListContainer = ({greeting}) => {
   const [data, setData]= useState([]);
@@ -54,8 +55,18 @@ export const ItemListContainer = ({greeting}) => {
       
   return (
     <div className="container-item-list">
-        <p>{greeting}</p>
+      {(data.length==0)
+      ?<Ring 
+      size={70}
+      lineWeight={7}
+      speed={1} 
+      color="gray" 
+    />
+      :<>  
+      <p>{greeting}</p>
         <ItemList data= {data}/>
+      </> 
+      }
     </div>
   )
 }
