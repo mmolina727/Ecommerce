@@ -35,7 +35,6 @@ export const ItemListContainer = ({greeting}) => {
               return { ...doc.data(), id: doc.id}
             });
             resolve(docsData);
-            console.log(docsData)
           });
         });
       };

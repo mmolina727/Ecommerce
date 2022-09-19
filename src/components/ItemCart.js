@@ -2,7 +2,6 @@ import React from 'react'
 import "../css/ItemCart.css";
 import { useContext } from 'react';
 import { cartcontext } from '../context/CartContext';
-import { useState } from 'react';
 
 
 export const ItemCart = ({img, price, product, quantity}) => {

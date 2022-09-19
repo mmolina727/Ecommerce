@@ -34,7 +34,7 @@ const CardDetail = ({id,img, alt, product, price, }) => {
               <p>${price} x Ud.</p>
               {(count==0) ?
               <ItemCount initial="1 " stock="10" onAdd={onCount}/>
-              :<Link to={"/cart"}><button>Agregar carrito</button></Link>
+              :<Link to={"/cart"}><button>Ir al carrito</button></Link>
               }     
           </div>
       </div>

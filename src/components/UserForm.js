@@ -7,7 +7,7 @@ import firestoreDB from "../database/firestone";
 import { addDoc, collection} from "firebase/firestore";
 
 export const UserForm = () => {
-  const {cart, totalPrice}=useContext(cartcontext);
+  const {cart, totalPrice, cleanCart}=useContext(cartcontext);
 
     const [userData, setUserData] = useState({
         email: "",
@@ -27,14 +27,13 @@ export const UserForm = () => {
 
       const collectionDB= collection(firestoreDB, "orders");
       const docRef= await addDoc(collectionDB, ordenCompra);
-      console.log(docRef);
 
       setUserData({
         email: "",
         name: "",
         phone: ""
     });
-    console.log(ordenCompra);
+    cleanCart();
     }
 
     const changeInput= (e)=>{
@@ -46,26 +45,25 @@ export const UserForm = () => {
 
         copyUserData[inputName] = value;
         setUserData(copyUserData);
-        console.log(copyUserData);
     }
 
   return (
     <div className='user-form'>
     <form onSubmit={handleSubmit}>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input onChange={changeInput} type="email" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={userData.email} required/>
-    <div id="emailHelp" class="form-text"></div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+    <input onChange={changeInput} type="email" name='email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={userData.email} required/>
+    <div id="emailHelp" className="form-text"></div>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Nombre</label>
-    <input onChange={changeInput} type="text" name='name' class="form-control" id="exampleInputPassword1" value={userData.name} required/>
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">Nombre</label>
+    <input onChange={changeInput} type="text" name='name' className="form-control" id="exampleInputPassword1" value={userData.name} required/>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Telefono</label>
-    <input onChange={changeInput} type="number" name='phone' class="form-control" id="exampleInputPassword1" value={userData.phone} required/>
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">Telefono</label>
+    <input onChange={changeInput} type="number" name='phone' className="form-control" id="exampleInputPassword1" value={userData.phone} required/>
   </div>
-  <button type="submit" class="btn btn-primary">Finalizar compra</button>
+  <button type="submit" className="btn btn-success">Finalizar compra</button>
 </form>
 </div>
   );

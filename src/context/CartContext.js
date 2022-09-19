@@ -58,7 +58,6 @@ function CustomCartContextProvider({children}){
         for(let i=0; i < copyCart.length; i++){
             price+= (copyCart[i].price * copyCart[i].quantity)
        }
-       console.log(price);
        return  (price);
     }
 
