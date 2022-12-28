@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { cartcontext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const CardDetail = ({id,img, alt, product, price, }) => {
 
@@ -21,6 +22,8 @@ const CardDetail = ({id,img, alt, product, price, }) => {
 
     
     SetCount(count);
+
+    swal("Producto agregado al carrito", "", "success");
   }
 
     return (

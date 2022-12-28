@@ -5,6 +5,7 @@ import { cartcontext } from '../context/CartContext'
 import { useContext } from 'react';
 import firestoreDB from "../database/firestone";
 import { addDoc, collection} from "firebase/firestore";
+import swal from 'sweetalert';
 
 export const UserForm = () => {
   const {cart, totalPrice, cleanCart}=useContext(cartcontext);
@@ -33,6 +34,9 @@ export const UserForm = () => {
         name: "",
         phone: ""
     });
+
+    swal("Felicitaciones!", "Orden de compra realizada", "success");
+
     cleanCart();
     }
 
