@@ -16,10 +16,10 @@ function App() {
       <CustomCartContextProvider>
         <NavBar/>
           <Routes>
-            <Route path='/' element={<ItemListContainer greeting="catalogo"/>}/>
+            <Route path='/' element={<ItemListContainer greeting="Conoce nuestros productos"/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/detalle/:id' element={<ItemDetailConteiner/>}/>
-            <Route path='/category/:idCategory' element={<ItemListContainer greeting="productos"/>}/>
+            <Route path='/category/:idCategory' element={<ItemListContainer greeting="Productos"/>}/>
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
         </CustomCartContextProvider>

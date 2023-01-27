@@ -62,7 +62,7 @@ export const ItemListContainer = ({greeting}) => {
       color="gray" 
     />
       :<>  
-      <p>{greeting}</p>
+      <p className='title'>{greeting}</p>
         <ItemList data= {data}/>
       </> 
       }

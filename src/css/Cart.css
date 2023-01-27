@@ -1,6 +1,14 @@
 .cart{
-    margin: 20px 80px;
+    margin: 5px;
     border: solid;
+}
+
+.content-cart{
+    background-color: rgb(253, 253, 216);
+}
+
+.content-list-cart,.cart-price{
+    background-color: white;
 }
 
 .conteiner-cart{
@@ -10,6 +18,10 @@
     background-color: black;
 }
 
+.content-list-cart, .conteiner-cart{
+    font-size: 10px;
+}
+
 .conteiner-cart li{
     text-align: center;
     list-style: none;
@@ -17,7 +29,7 @@
 }
 
 .msg-cart{
-    font-size: 20px;
+    font-size: 10px;
     text-align: center;
     margin: 20px 0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,4 +42,24 @@
     font-weight: 600;
     padding: 5px;
     margin-left: 30px;
+}
+
+@media (min-width: 700px) {
+    .cart{
+        margin: 5px 80px;
+    }
+    
+    .msg-cart{
+        font-size: 20px;
+    }
+
+    .content-list-cart, .conteiner-cart{
+        font-size: 18px;
+    }
+
+    .cart-price{
+        margin: 0;
+        padding-left: 20px;
+    }
+
 }

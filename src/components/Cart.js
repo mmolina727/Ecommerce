@@ -23,7 +23,7 @@ export const Cart = () => {
   return (
     
 
-    <div >
+    <div className='content-cart'>
       <div className='cart'>
       <ul className='conteiner-cart'>
         <li>Producto</li>

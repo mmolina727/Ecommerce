@@ -30,15 +30,17 @@ const CardDetail = ({id,img, alt, product, price, }) => {
       <div className='card-detail'>
           <div className='card-detail-image'>
               <img src={img} alt= {alt}/>
-              <p>Lorem ipsum dolor sit amet. Sit sequi maiores eum omnis fugit cum internos dolore cum rerum possimus. Vel voluptatibus adipisci aut quia dolor id voluptatem alias ut nostrum facere id incidunt quam. Eum quaerat doloremque ut porro eveniet sit quaerat alias et molestias eveniet. Ut veritatis Quis et voluptatum esse ut commodi ducimus.</p>
           </div>
           <div className='card-detail-text'>
-              <h3>{product}</h3>
-              <p>${price} x Ud.</p>
+              <h3><b>{product}</b></h3>
+              <p> <b>${price} x Ud.</b></p>
+              <p>Lorem ipsum dolor sit amet. Sit sequi maiores eum omnis fugit cum internos dolore cum rerum possimus. Vel voluptatibus adipisci aut quia dolor id voluptatem alias ut nostrum facere id incidunt quam. Eum quaerat doloremque ut porro eveniet sit quaerat alias et molestias eveniet. Ut veritatis Quis et voluptatum esse ut commodi ducimus.</p>
+              <div className='content-count'>
               {(count==0) ?
               <ItemCount initial="1 " stock="10" onAdd={onCount}/>
               :<Link to={"/cart"}><button>Ir al carrito</button></Link>
-              }     
+              }
+              </div>     
           </div>
       </div>
     )
