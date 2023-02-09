@@ -1,6 +1,7 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./components/NavBar";
+import Footer from './components/Footer';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailConteiner from './components/ItemDetailConteiner';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -22,6 +23,7 @@ function App() {
             <Route path='/category/:idCategory' element={<ItemListContainer greeting="Productos"/>}/>
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
+        <Footer/>
         </CustomCartContextProvider>
       </BrowserRouter>
     </div>

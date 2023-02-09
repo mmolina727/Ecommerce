@@ -1,0 +1,31 @@
+.content-footer{
+    background: rgb(68,1,1);
+    background: linear-gradient(163deg, rgba(68,1,1,1) 0%, rgba(154,2,2,1) 40%, rgba(162,0,0,1) 92%);
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.social-media p{
+    color:white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.social-media{
+    display: flex;
+    flex-direction: row;
+}
+
+.social-media img{
+    height: 50%;
+    margin: 0 15px;
+}
+
+.footer-paragraph p{
+    color:white;
+}
