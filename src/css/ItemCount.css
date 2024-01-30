@@ -1,5 +1,5 @@
 .container-count{
-    background-color: rgb(216, 210, 195);
+    background-color: rgb(255 220 134);
     border-radius: 10px;
     border-style: solid;
     display: flex;
@@ -8,11 +8,11 @@
     text-align: center;
     width: auto;
     height: auto;
-    margin: 5px;
+    margin-left:55px;
 }
 
 .container-count button{
-    background-color: rgb(216, 210, 195);
+    background-color: rgb(255 220 134);
     font-size: 20px;
     text-align: center;
     border: none;

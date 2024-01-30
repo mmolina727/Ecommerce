@@ -3,7 +3,7 @@
     height: 360px;
     margin: 20px;
     box-shadow: 4px 4px 4px black;
-    background-color: whitesmoke;
+    background-color: rgb(255, 255, 255);
     font-family: 'Archivo', sans-serif;
 }
 
@@ -25,9 +25,15 @@
     padding: 15px;
     border-radius: 5px;
     font-size: 11px;
-    background-color: rgb(216, 210, 195);
+    background-color: rgb(255 220 134);
     text-transform: uppercase;
 }
+
+.card-text button:hover{
+    background-color: rgb(255, 192, 32);
+    transition: all 0.4s;
+}
+
 .card-image{
     height: 20vh;
     width: 100%;

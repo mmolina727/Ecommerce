@@ -28,9 +28,15 @@
     padding: 15px;
     border-radius: 5px;
     font-size: 11px;
-    background-color: rgb(216, 210, 195);
+    background-color: rgb(255 220 134);
     text-transform: uppercase;
 }
+
+.card-detail-text button:hover{
+    background-color: rgb(255, 192, 32);
+    transition: all 0.4s;
+}
+
 .card-detail-image{
     display: flex;
     flex-direction: row;

@@ -1,7 +1,8 @@
 .encabezado{
-    background: rgb(68,1,1);
-    background: linear-gradient(163deg, rgba(68,1,1,1) 0%, rgba(154,2,2,1) 40%, rgba(162,0,0,1) 92%);
-    height: 25vh;
+    background-image:url("../img/navbar.jpg");
+    background-size: cover;
+    height: 36vh;
+    width: 100%;
 }
 
 .container-main{
@@ -46,24 +47,105 @@
     font-weight: 500;
 }
 
-.container-main-list ul li a{
+.main-list{
+    display: flex;
+    justify-content: end;
+    margin-right: 2%;
+}
+
+.main-list li a{
     text-decoration: none;
-    color: black;
+    color:rgb(212, 181, 0);
+}
+
+.main-list li a:hover{
+    color:rgb(255, 217, 0);
+    transition: all 0.4s;
+}
+
+.container-list{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height:auto;
+    background-image: url("../img/navbar-list.jpg");
+    background-size: cover;
+}
+
+.list{
+    width: 100%;
+    height: auto;
+}
+
+.list ul{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+    height: auto;
+}
+
+.list ul li:hover{
+    font-style: italic;
+    transition: all 0.4s;
+}
+
+.main-list li{
+    color:rgb(212, 181, 0);
+    font-size: 7px;
+    border-right: 2px dotted rgb(212, 181, 0);
+    padding-right: 6px;
+    cursor: pointer;
+}
+
+.main-list li:hover{
+    color:rgb(255, 217, 0);
+    transition: all 0.4s;
+}
+
+.container-list ul li a{
+    text-decoration: none;
+    color: white;
 }
 
 @media (min-width: 700px) {
 
     .encabezado{
-        height: 15vh;
+        height: 26vh;
+        z-index: 1;
+    }
+
+    .encabezado ul{
+        margin-bottom: 0;
     }
 
     .encabezado ul li{
-        font-size: 30px;
-        margin: 15px;
+        font-size: 17px;
+        margin: 5px 15px;
     }
 
     .container-main-list ul{
         display: flex;
         flex-direction: row;
+        height: auto;
+    }
+
+    .container-main{
+        height: 95px;
+    }
+
+    .contenedor-img{
+        width: 55%;
+        height: 100%;
+    }
+
+    .contenedor-img img{
+        width: 45%;
+        height: 100%;
+    }
+
+    .scrolled{
+        height: 70%;
+        width: 35%;
+        transition: 1s;
     }
 }    

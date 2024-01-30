@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import firestoreDB from "../database/firestone";
 import {getDocs, collection, query, where} from "firebase/firestore";
 import { Ring } from '@uiball/loaders'
+import { Banner } from './Banner';
 
 export const ItemListContainer = ({greeting}) => {
   const [data, setData]= useState([]);
@@ -61,7 +62,8 @@ export const ItemListContainer = ({greeting}) => {
       speed={1} 
       color="gray" 
     />
-      :<>  
+      :<>
+      <Banner/>  
       <p className='title'>{greeting}</p>
         <ItemList data= {data}/>
       </> 
