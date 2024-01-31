@@ -7,8 +7,8 @@ import ItemDetailConteiner from './components/ItemDetailConteiner';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CustomCartContextProvider from './context/CartContext';
 import { Cart } from './components/Cart';
-import { Banner } from './components/Banner';
 import { Nosotros } from './components/Nosotros';
+import { CardCompraPasosConteiner } from './components/CardCompraPasosConteiner';
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
           <Routes>
             <Route path='/' element={<ItemListContainer greeting="Ofertas imperdibles!"/>}/>
             <Route path='/nosotros' element={<Nosotros/>}/>
+            <Route path='/compras' element={<CardCompraPasosConteiner/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/detalle/:id' element={<ItemDetailConteiner/>}/>
             <Route path='/category/:idCategory' element={<ItemListContainer greeting=""/>}/>

@@ -1,0 +1,17 @@
+.steps-conteiner{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fcf3d4;
+    padding-top: 25px;
+}
+
+@media (min-width: 700px) {
+    .steps-conteiner{
+        height: 70vh;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-around;
+    }
+}

@@ -34,7 +34,7 @@ function NavBar(){
             <div className="container-main-list">
                 <ul className="main-list">
                     <li> <Link to={"/nosotros"}>Nosotros</Link></li>
-                    <li>Preguntas frecuentes?</li>
+                    <li> <Link to={"/compras"}>¿Cómo comprar?</Link></li>
                     <li>Contacto</li>
                 </ul>
             </div>
