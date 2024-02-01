@@ -6,9 +6,13 @@
 
 form{
     width: 70%;
-    background-color:rgb(237 215 149);
+    background-color:#ffffb8;
     padding: 20px;
     margin: 10px;
+}
+
+.form-control{
+    border: 1px solid #4e3518;
 }
 
 .form-label{

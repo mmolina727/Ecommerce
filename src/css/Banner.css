@@ -1,0 +1,10 @@
+.w-100{
+    height: 17vh;
+}
+
+@media (min-width: 700px) {
+
+    .w-100{
+        height: 45vh;
+    }
+}

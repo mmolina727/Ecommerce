@@ -7,16 +7,20 @@
     justify-content: space-around;
     text-align: center;
     width: auto;
-    height: auto;
+    height: 75px;
     margin-left:55px;
 }
 
-.container-count button{
+.container-count .bton{
     background-color: rgb(255 220 134);
     font-size: 20px;
     text-align: center;
     border: none;
     color: black;
+}
+
+.container-count button span{
+    margin-bottom: 15px;
 }
 
 .container-count span{

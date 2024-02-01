@@ -16,12 +16,12 @@ const ItemCount = ( {initial, stock, onAdd} ) => {
   return (
     <div >
       <div className='container-count'>
-        <button onClick={decrease}>-</button>
+        <button onClick={decrease}><span>-</span></button>
         <span>{count}</span>
-        <button onClick={increase}>+</button>
+        <button onClick={increase}><span>+</span></button>
       </div>
       <div>
-        <button onClick={()=> onAdd(count)}>FINALIZAR COMPRA</button>
+        <button className='bton' onClick={()=> onAdd(count)}>FINALIZAR COMPRA</button>
       </div>
     </div>
   )
